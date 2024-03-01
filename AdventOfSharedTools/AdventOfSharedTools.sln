@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfSharedTools", "AdventOfSharedTools.csproj", "{7FC3D61C-4333-4640-A8BF-0A5337F33A2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfSharedTools.Tests", "..\AdventOfSharedTools.Tests\AdventOfSharedTools.Tests.csproj", "{B84E7FBF-400C-4891-91B7-1075ED5088DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FC3D61C-4333-4640-A8BF-0A5337F33A2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FC3D61C-4333-4640-A8BF-0A5337F33A2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FC3D61C-4333-4640-A8BF-0A5337F33A2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FC3D61C-4333-4640-A8BF-0A5337F33A2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B84E7FBF-400C-4891-91B7-1075ED5088DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B84E7FBF-400C-4891-91B7-1075ED5088DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B84E7FBF-400C-4891-91B7-1075ED5088DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B84E7FBF-400C-4891-91B7-1075ED5088DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C3BE944-2963-47B4-AD6B-3391BAAF9E5B}
+	EndGlobalSection
+EndGlobal
