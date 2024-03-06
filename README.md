@@ -17,3 +17,11 @@ dotnet add package AdventOfSharedTools
 ```
 # How to use
 Be sure to check out [Github Wiki](https://github.com/svCcare/AdventOfSharedTools/wiki) pages for this project!
+
+# Tech Stack
+Project uses .NET 8
+
+# Dependencies
+[XUnit](https://github.com/xunit/xunit)
+
+[FluentAssertions](https://github.com/fluentassertions/fluentassertions)
