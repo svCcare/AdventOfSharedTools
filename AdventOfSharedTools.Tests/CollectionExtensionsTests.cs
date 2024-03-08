@@ -45,5 +45,59 @@ namespace AdventOfSharedTools.Tests
 
             dictionary.Should().BeEmpty();
         }
+
+        [Fact]
+        public void PopMax_OriginalCollectionIsModified_AndCorrectNumberIsReturned()
+        {
+            var collection = new List<int> { 1, 2 };
+
+            var maxValue = collection.PopMax();
+
+            maxValue.Should().Be(2);
+            collection.Should().HaveCount(1);
+            collection[0].Should().Be(1);
+        }
+
+        [Fact]
+        public void PopMax_EmptyCollection_OriginalCollectionIsModified()
+        {
+            var collection = Enumerable.Empty<int>().ToList();
+
+            Action act = () => collection.PopMax();
+
+            act.Should().Throw<InvalidOperationException>();
+        }
+
+        [Fact]
+        public void PopMax_CollectionWithTwoExactValues_OriginalCollectionIsModified()
+        {
+            var collection = new List<int> { 2, 2 };
+
+            var maxValue = collection.PopMax();
+
+            maxValue.Should().Be(2);
+            collection.Should().HaveCount(1);
+            collection[0].Should().Be(2);
+        }
+
+        [Fact]
+        public void PopMax_FixedCollection_WillThrowNotSupportedException()
+        {
+            var collection = new int[2] { 1, 2 };
+
+            Action act = () => collection.PopMax();
+
+            act.Should().Throw<NotSupportedException>();
+        }
+
+        [Fact]
+        public void PopMax_CalledOnNullObject_WillThrowArgumentNullException()
+        {
+            List<int> collection = null;
+
+            Action act = () => collection.PopMax();
+
+            act.Should().Throw<ArgumentNullException>();
+        }
     }
 }

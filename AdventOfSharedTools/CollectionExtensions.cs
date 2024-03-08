@@ -13,5 +13,23 @@
         {
             return source.Select((item, index) => (item, index));
         }
+
+        /// <summary>
+        /// Obtains max element of a sequence, while removing it from original collection.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <exception cref="InvalidOperationException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="NotSupportedException"></exception>
+        /// <exception cref=""></exception>
+        /// <returns></returns>
+        public static T PopMax<T>(this IList<T> source) where T : struct, IComparable, IFormattable, IConvertible, IComparable<T>, IEquatable<T>
+        {
+            var max = source.Max();
+            source.Remove(max);
+
+            return max;
+        }
     }
 }
