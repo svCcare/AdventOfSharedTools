@@ -1,4 +1,4 @@
-# AdventSharedTools
+# AdventOfSharedTools
 
 ![NuGet](https://img.shields.io/nuget/v/AdventOfSharedTools)
 ![NuGet](https://img.shields.io/nuget/dt/AdventOfSharedTools)
@@ -15,6 +15,7 @@ To install this NuGet package all you need is to open console in Visual Studio a
 ```
 dotnet add package AdventOfSharedTools
 ```
+
 # How to use
 Be sure to check out [Github Wiki](https://github.com/svCcare/AdventOfSharedTools/wiki) pages for this project!
 
