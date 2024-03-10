@@ -8,6 +8,8 @@
 **AdventOfSharedTools** is a C# OpenSource library that contains set of methods and models making solving AdventOfCode challenges easier.
 Ranging from reading text from a file to complex algorythms alongside with several extension methods to make your programmer life better.
 
+This project was included in 100-commits Competition
+
 # Installation
 
 To install this NuGet package all you need is to open console in Visual Studio and type:
