@@ -11,7 +11,7 @@ namespace AdventOfSharedTools.Mappers
                 'D' or 'S' => Direction.Down,
                 'R' or 'E' => Direction.Right,
                 'L' or 'W' => Direction.Left,
-                _ => throw new NotImplementedException()
+                _ => throw new ArgumentException($"{nameof(DirectionMapper)} is not able to map: '{input}'")
             };
     }
 }
