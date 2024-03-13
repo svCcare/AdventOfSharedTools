@@ -52,7 +52,7 @@ namespace AdventOfSharedTools.Tests.Mappers
 
             Action act = () => DirectionMapper.FromChar(invalidInput);
 
-            act.Should().Throw<NotImplementedException>();
+            act.Should().Throw<ArgumentException>("DirectionMapper is not able to map: '$'");
         }
     }
 }
