@@ -8,7 +8,7 @@
 **AdventOfSharedTools** is a C# OpenSource library that contains set of methods and models making solving AdventOfCode challenges easier.
 Ranging from reading text from a file to complex algorythms alongside with several extension methods to make your programmer life better.
 
-This project was included in 100-commits Competition
+This project was included in 100-commits Competition, main competencies i want to improve are Good practices while creating public libraries - i have put much effort into documenting stuff so it is very user friendly.
 
 # Installation
 
