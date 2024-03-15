@@ -21,6 +21,10 @@ dotnet add package AdventOfSharedTools
 # How to use
 Be sure to check out [Github Wiki](https://github.com/svCcare/AdventOfSharedTools/wiki) pages for this project!
 
+# Report issues
+Noticed place for improvement? Something is missing? Stuff is not working correctly?
+Create an issue i will surely look inside it!
+
 # Tech Stack
 Project uses .NET 8
 
