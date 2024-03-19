@@ -2,9 +2,18 @@
 
 namespace AdventOfSharedTools.Algorythms
 {
-    public class CalculatePokerHand
+    /// <summary>
+    /// Contains method to calculate hand in a poker game.
+    /// </summary>
+    public static class CalculatePokerHand
     {
-        public PokerHandResult Calculate(IEnumerable<Card> cards)
+        /// <summary>
+        /// Calculates result of set of cards in a poker game.
+        /// </summary>
+        /// <param name="cards">Set of 5 cards which will be calculated.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException">When incorrect number of cards is provided or illegal set of cards is given.</exception>
+        public static PokerHandResult Calculate(IEnumerable<Card> cards)
         {
             if (cards.Count() is not 5)
             {
@@ -27,6 +36,7 @@ namespace AdventOfSharedTools.Algorythms
         private static PokerHandResult CalculateByOrder(IEnumerable<Card> cards)
         {
             var sameShape = cards.GroupBy(x => x.Shape).Count() == 1;
+            var hasAce = cards.Any(x => x.Type == CardType.Ace);
 
             var cardsInOrder = cards.OrderByDescending(x => x.Type).ToList();
             var cardsAreInOrder = true;
@@ -38,14 +48,13 @@ namespace AdventOfSharedTools.Algorythms
                 }
             }
 
-            return (sameShape, cardsAreInOrder) switch
+            return (sameShape, cardsAreInOrder, hasAce) switch
             {
-                (false, false) => PokerHandResult.None,
-                (true, false) => PokerHandResult.Flush,
-                (false, true) => PokerHandResult.Straight,
-                (true, true) => cardsInOrder.First().Type == CardType.Ace
-                    ? PokerHandResult.RoyalFlush
-                    : PokerHandResult.StraightFlush
+                (false, false, _) => PokerHandResult.None,
+                (true, false, _) => PokerHandResult.Flush,
+                (false, true, _) => PokerHandResult.Straight,
+                (true, true, false) => PokerHandResult.StraightFlush,
+                (true, true, true) => PokerHandResult.RoyalFlush
             };
         }
     }
