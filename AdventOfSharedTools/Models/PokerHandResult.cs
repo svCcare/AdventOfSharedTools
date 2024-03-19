@@ -13,7 +13,6 @@
         Flush,
         FullHouse,
         FourKind,
-        FiveKind,
         StraightFlush,
         RoyalFlush,
     }
