@@ -5,7 +5,7 @@ namespace AdventOfSharedTools.Algorythms
     /// <summary>
     /// Contains method to calculate hand in a poker game.
     /// </summary>
-    public static class CalculatePokerHand
+    public static class PokerHandCalculator
     {
         /// <summary>
         /// Calculates result of set of cards in a poker game.
@@ -17,14 +17,14 @@ namespace AdventOfSharedTools.Algorythms
         {
             if (cards.Count() is not 5)
             {
-                throw new ArgumentException($"{nameof(CalculatePokerHand)} exception - {cards.Count()} is incorrect number of cards.");
+                throw new ArgumentException($"{nameof(PokerHandCalculator)} exception - {cards.Count()} is incorrect number of cards.");
             }
 
             var groups = cards.GroupBy(x => x).OrderByDescending(x => x.Count());
 
             return groups.Count() switch
             {
-                1 => throw new ArgumentException($"{nameof(CalculatePokerHand)} exception - Invalid set of cards"),
+                1 => throw new ArgumentException($"{nameof(PokerHandCalculator)} exception - Invalid set of cards"),
                 2 => groups.Any(x => x.Count() == 4) ? PokerHandResult.FourKind : PokerHandResult.FullHouse,
                 3 => groups.Any(x => x.Count() == 3) ? PokerHandResult.ThreeKind : PokerHandResult.TwoPairs,
                 4 => PokerHandResult.Pair,
