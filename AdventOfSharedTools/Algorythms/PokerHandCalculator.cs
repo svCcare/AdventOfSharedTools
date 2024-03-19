@@ -13,6 +13,7 @@ namespace AdventOfSharedTools.Algorythms
         /// <param name="cards">Set of 5 cards which will be calculated.</param>
         /// <returns></returns>
         /// <exception cref="ArgumentException">When incorrect number of cards is provided or illegal set of cards is given.</exception>
+        /// <exception cref="ArgumentNullException">Provided parameter is null.</exception>
         public static PokerHandResult Calculate(IEnumerable<Card> cards)
         {
             if (cards.Count() is not 5)
