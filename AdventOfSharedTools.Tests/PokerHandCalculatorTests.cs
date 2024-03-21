@@ -21,7 +21,7 @@ namespace AdventOfSharedTools.Tests
         [InlineData(6)]
         public void Calculate_WhenIncorrectNumberOfCards_ThrowsArgumentException(int cardsCount)
         {
-            var cardsCollection = GetCards(cardsCount);
+            var cardsCollection = GetCards(new(), cardsCount);
 
             Action act = () => PokerHandCalculator.Calculate(cardsCollection);
 
@@ -31,21 +31,42 @@ namespace AdventOfSharedTools.Tests
         [Fact]
         public void Calculate_WhenIllegalCombinationOfCards_ThrowsArgumentException()
         {
-            var cardsCollection = GetCards(5); // generate 5 exact cards
+            var cardsCollection = GetCards(new(true, false, CardType.Two));
 
             Action act = () => PokerHandCalculator.Calculate(cardsCollection);
 
             act.Should().Throw<ArgumentException>();
         }
 
-        private static IEnumerable<Card> GetCards(int count)
+        // TODO: Theory
+        // all cases
+        [Fact]
+        public void Calculate_ForSetsOfCards_ReturnsExpectedResults()
         {
-            var list = new List<Card>();
+            var cardsCollection = GetCards(new(true, true, CardType.Ten));
+
+            var result = PokerHandCalculator.Calculate(cardsCollection);
+
+            result.Should().Be(PokerHandResult.RoyalFlush);
+        }
+
+        private static IEnumerable<Card> GetCards(CardGeneratorOptions options, int count = 5)
+        {
+            var cards = new List<Card>();
             for (int i = 0; i < count; i++)
             {
-                list.Add(new Card(CardType.Two, CardShape.Diamond));
+                var type = options.InOrder ? options.StartingCard + i : options.StartingCard;
+                var shape = options.SameShape ? CardShape.Spade : (CardShape)Random.Shared.Next(0, 3);
+
+                var card = new Card(type, shape);
+
+                cards.Add(card);
             }
-            return list;
+
+            return cards;
         }
     }
+
+    // TODO better place for it?
+    internal record class CardGeneratorOptions(bool SameShape = true, bool InOrder = true, CardType StartingCard = CardType.Two);
 }
