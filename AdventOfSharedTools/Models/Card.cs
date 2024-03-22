@@ -5,5 +5,11 @@
     /// </summary>
     /// <param name="Type"></param>
     /// <param name="Shape"></param>
-    public record Card(CardType Type, CardShape Shape);
+    public record Card(CardType Type, CardShape Shape)
+    {
+        public override string ToString()
+        {
+            return $"{this.Type}{this.Shape.CardShapeAsIcon()}";
+        }
+    };
 }

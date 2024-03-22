@@ -1,4 +1,7 @@
-﻿namespace AdventOfSharedTools
+﻿using AdventOfSharedTools.Models;
+using System.Text;
+
+namespace AdventOfSharedTools
 {
     public static class CollectionExtensions
     {
@@ -30,6 +33,18 @@
             source.Remove(max);
 
             return max;
+        }
+
+
+        public static string PrintCards(this IEnumerable<Card> cards)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var card in cards)
+            {
+                sb.Append(card.ToString());
+                sb.Append(',');
+            }
+            return sb.ToString();
         }
     }
 }
