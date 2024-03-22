@@ -21,7 +21,7 @@ namespace AdventOfSharedTools.Algorythms
                 throw new ArgumentException($"{nameof(PokerHandCalculator)} exception - {cards.Count()} is incorrect number of cards.");
             }
 
-            var groups = cards.GroupBy(x => x).OrderByDescending(x => x.Count());
+            var groups = cards.GroupBy(x => x.Type).OrderByDescending(x => x.Count());
 
             return groups.Count() switch
             {

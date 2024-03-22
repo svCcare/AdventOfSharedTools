@@ -38,16 +38,16 @@ namespace AdventOfSharedTools.Tests
             act.Should().Throw<ArgumentException>();
         }
 
-        // TODO: Theory
-        // all cases
-        [Fact]
-        public void Calculate_ForSetsOfCards_ReturnsExpectedResults()
+        [Theory]
+        [ClassData(typeof(PokerHandCalculatorTestData))]
+        public void Calculate_ForSetsOfCards_ReturnsExpectedResults(
+            Card card1, Card card2, Card card3, Card card4, Card card5, PokerHandResult expectedResult)
         {
-            var cardsCollection = GetCards(new(true, true, CardType.Ten));
+            var cardsCollection = new List<Card> { card1, card2, card3, card4, card5 };
 
             var result = PokerHandCalculator.Calculate(cardsCollection);
 
-            result.Should().Be(PokerHandResult.RoyalFlush);
+            result.Should().Be(expectedResult);
         }
 
         private static IEnumerable<Card> GetCards(CardGeneratorOptions options, int count = 5)
