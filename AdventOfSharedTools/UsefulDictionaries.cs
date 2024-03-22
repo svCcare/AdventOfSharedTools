@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Frozen;
+using System.Collections.ObjectModel;
 
 namespace AdventOfSharedTools
 {
@@ -25,6 +26,7 @@ namespace AdventOfSharedTools
         /// Contains names of numbers from 0 to 9.
         /// <para>Key case is ignored.</para>
         /// </summary>
-        public static readonly ReadOnlyDictionary<string, int> Numbers = new(_numbers);
+        public static readonly ReadOnlyDictionary<string, int> NumbersReadOnly = new(_numbers);
+        public static readonly FrozenDictionary<string, int> NumbersFrozen = _numbers.ToFrozenDictionary();
     }
 }

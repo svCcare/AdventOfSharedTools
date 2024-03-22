@@ -18,8 +18,8 @@ namespace AdventOfSharedTools.Tests
         [InlineData("nine", 9)]
         public void UsefulDictionaries_ReturnCorrectData(string phrase, int expectedValue)
         {
-            UsefulDictionaries.Numbers.Should().ContainKey(phrase);
-            UsefulDictionaries.Numbers[phrase].Should().Be(expectedValue);
+            UsefulDictionaries.NumbersReadOnly.Should().ContainKey(phrase);
+            UsefulDictionaries.NumbersReadOnly[phrase].Should().Be(expectedValue);
         }
 
         [Fact]
@@ -27,8 +27,8 @@ namespace AdventOfSharedTools.Tests
         {
             var keyName = "ONE";
 
-            UsefulDictionaries.Numbers.Should().ContainKey(keyName);
-            UsefulDictionaries.Numbers[keyName].Should().Be(1);
+            UsefulDictionaries.NumbersReadOnly.Should().ContainKey(keyName);
+            UsefulDictionaries.NumbersReadOnly[keyName].Should().Be(1);
         }
     }
 }
