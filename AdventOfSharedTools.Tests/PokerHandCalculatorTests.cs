@@ -41,11 +41,9 @@ namespace AdventOfSharedTools.Tests
         [Theory]
         [ClassData(typeof(PokerHandCalculatorTestData))]
         public void Calculate_ForSetsOfCards_ReturnsExpectedResults(
-            Card card1, Card card2, Card card3, Card card4, Card card5, PokerHandResult expectedResult)
+            IEnumerable<Card> cards, PokerHandResult expectedResult)
         {
-            Card[] cardsCollection = [card1, card2, card3, card4, card5];
-
-            var result = PokerHandCalculator.Calculate(cardsCollection);
+            var result = PokerHandCalculator.Calculate(cards);
 
             result.Should().Be(expectedResult);
         }
