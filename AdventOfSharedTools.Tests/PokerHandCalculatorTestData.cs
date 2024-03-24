@@ -20,77 +20,101 @@ namespace AdventOfSharedTools.Tests
                 PokerHandResult.Pair
             };
 
-            //yield return new object[] { // TwoPairs
-            //    new Card(CardType.Two, CardShape.Club),
-            //    new Card(CardType.Two, CardShape.Heart),
-            //    new Card(CardType.Four, CardShape.Diamond),
-            //    new Card(CardType.Four, CardShape.Club),
-            //    new Card(CardType.Five, CardShape.Club),
-            //    PokerHandResult.TwoPairs
-            //};
+            yield return new object[] { // TwoPairs
+                new Card[]
+                {
+                    new(Type.Two, Shape.Club),
+                    new(Type.Two, Shape.Heart),
+                    new(Type.Four, Shape.Diamond),
+                    new(Type.Four, Shape.Club),
+                    new(Type.Five, Shape.Club),
+                },
+                PokerHandResult.TwoPairs
+            };
 
-            //yield return new object[] { // ThreeKind
-            //    new Card(CardType.Two, CardShape.Club),
-            //    new Card(CardType.Two, CardShape.Heart),
-            //    new Card(CardType.Two, CardShape.Diamond),
-            //    new Card(CardType.Four, CardShape.Club),
-            //    new Card(CardType.Five, CardShape.Club),
-            //    PokerHandResult.ThreeKind
-            //};
+            yield return new object[] { // ThreeKind
+                new Card[]
+                {
+                    new(Type.Two, Shape.Club),
+                    new(Type.Two, Shape.Heart),
+                    new(Type.Two, Shape.Diamond),
+                    new(Type.Four, Shape.Club),
+                    new(Type.Five, Shape.Club),
+                },
+                PokerHandResult.ThreeKind
+            };
 
-            //yield return new object[] { // Straight
-            //    new Card(CardType.Two, CardShape.Club),
-            //    new Card(CardType.Three, CardShape.Heart),
-            //    new Card(CardType.Four, CardShape.Club),
-            //    new Card(CardType.Five, CardShape.Club),
-            //    new Card(CardType.Six, CardShape.Club),
-            //    PokerHandResult.Straight
-            //};
+            yield return new object[] { // Straight
+                new Card[]
+                {
+                    new(Type.Two, Shape.Club),
+                    new(Type.Three, Shape.Heart),
+                    new(Type.Four, Shape.Club),
+                    new(Type.Five, Shape.Club),
+                    new(Type.Six, Shape.Club),
+                },
+                PokerHandResult.Straight
+            };
 
-            //yield return new object[] { // Flush
-            //    new Card(CardType.Two, CardShape.Club),
-            //    new Card(CardType.Four, CardShape.Club),
-            //    new Card(CardType.Five, CardShape.Club),
-            //    new Card(CardType.Jack, CardShape.Club),
-            //    new Card(CardType.Ace, CardShape.Club),
-            //    PokerHandResult.Flush
-            //};
+            yield return new object[] { // Flush
+                new Card[]
+                {
+                    new(Type.Two, Shape.Club),
+                    new(Type.Four, Shape.Club),
+                    new(Type.Five, Shape.Club),
+                    new(Type.Jack, Shape.Club),
+                    new(Type.Ace, Shape.Club),
+                },
+                PokerHandResult.Flush
+            };
 
-            //yield return new object[] { // FullHouse
-            //    new Card(CardType.Two, CardShape.Club),
-            //    new Card(CardType.Two, CardShape.Heart),
-            //    new Card(CardType.Three, CardShape.Club),
-            //    new Card(CardType.Three, CardShape.Diamond),
-            //    new Card(CardType.Three, CardShape.Spade),
-            //    PokerHandResult.FullHouse
-            //};
+            yield return new object[] { // FullHouse
+                new Card[]
+                {
+                    new(Type.Two, Shape.Club),
+                    new(Type.Two, Shape.Heart),
+                    new(Type.Three, Shape.Club),
+                    new(Type.Three, Shape.Diamond),
+                    new(Type.Three, Shape.Spade),
+                },
+                PokerHandResult.FullHouse
+            };
 
-            //yield return new object[] { // FourKind
-            //    new Card(CardType.Two, CardShape.Club),
-            //    new Card(CardType.Two, CardShape.Heart),
-            //    new Card(CardType.Two, CardShape.Diamond),
-            //    new Card(CardType.Two, CardShape.Spade),
-            //    new Card(CardType.Five, CardShape.Club),
-            //    PokerHandResult.FourKind
-            //};
+            yield return new object[] { // FourKind
+                new Card[]
+                {
+                    new(Type.Two, Shape.Club),
+                    new(Type.Two, Shape.Heart),
+                    new(Type.Two, Shape.Diamond),
+                    new(Type.Two, Shape.Spade),
+                    new(Type.Five, Shape.Club),
+                },
+                PokerHandResult.FourKind
+            };
 
-            //yield return new object[] { // StraightFlush
-            //    new Card(CardType.Two, CardShape.Club),
-            //    new Card(CardType.Three, CardShape.Club),
-            //    new Card(CardType.Four, CardShape.Club),
-            //    new Card(CardType.Five, CardShape.Club),
-            //    new Card(CardType.Six, CardShape.Club),
-            //    PokerHandResult.StraightFlush
-            //};
+            yield return new object[] { // StraightFlush
+                new Card[]
+                {
+                    new(Type.Two, Shape.Club),
+                    new(Type.Three, Shape.Club),
+                    new(Type.Four, Shape.Club),
+                    new(Type.Five, Shape.Club),
+                    new(Type.Six, Shape.Club),
+                },
+                PokerHandResult.StraightFlush
+            };
 
-            //yield return new object[] { // RoyalFlush
-            //    new Card(CardType.Ten, CardShape.Club),
-            //    new Card(CardType.Jack, CardShape.Club),
-            //    new Card(CardType.Queen, CardShape.Club),
-            //    new Card(CardType.King, CardShape.Club),
-            //    new Card(CardType.Ace, CardShape.Club),
-            //    PokerHandResult.RoyalFlush
-            //};
+            yield return new object[] { // RoyalFlush
+                new Card[]
+                {
+                    new(Type.Ten, Shape.Club),
+                    new(Type.Jack, Shape.Club),
+                    new(Type.Queen, Shape.Club),
+                    new(Type.King, Shape.Club),
+                    new(Type.Ace, Shape.Club),
+                },
+                PokerHandResult.RoyalFlush
+            };
         }
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();

@@ -43,10 +43,6 @@ namespace AdventOfSharedTools.Tests
         public void Calculate_ForSetsOfCards_ReturnsExpectedResults(
             IEnumerable<Card> cards, PokerHandResult expectedResult)
         {
-            (int A, string B)[] array = [(1, "a"), (2, "b"), (3, "c")];
-            Random.Shared.Shuffle(array);
-            var fff = Random.Shared.GetItems(array, 2);
-
             var result = PokerHandCalculator.Calculate(cards);
 
             result.Should().Be(expectedResult);
