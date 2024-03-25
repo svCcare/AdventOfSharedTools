@@ -4,6 +4,10 @@
 ![NuGet](https://img.shields.io/nuget/dt/AdventOfSharedTools)
 ![Workflow](https://github.com/svCcare/AdventOfSharedTools/actions/workflows/build.yml/badge.svg)
 
+release version badge
+
+license badge
+
 # Description
 
 **AdventOfSharedTools** is a C# OpenSource library that contains set of methods and models making solving AdventOfCode challenges easier.
