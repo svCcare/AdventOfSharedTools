@@ -2,6 +2,7 @@
 
 ![NuGet](https://img.shields.io/nuget/v/AdventOfSharedTools)
 ![NuGet](https://img.shields.io/nuget/dt/AdventOfSharedTools)
+![Workflow](https://github.com/svCcare/AdventOfSharedTools/actions/workflows/build.yml/badge.svg)
 
 # Description
 
