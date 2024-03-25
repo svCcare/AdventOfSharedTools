@@ -20,8 +20,9 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-    - name: Restore dependencies
+    - name: Install dependencies
       run: dotnet restore
+      working-directory: AdventOfSharedTools
     - name: Build
       run: dotnet build --no-restore
     - name: Test
