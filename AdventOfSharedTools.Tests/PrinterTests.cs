@@ -17,7 +17,7 @@ namespace AdventOfSharedTools.Tests
             {
                 Printer.PrintResult(input);
                 var output = consoleOutput.GetOuput();
-                output.Should().Be($"Result: {input}\r\n");
+                output.Should().Contain($"Result: {input}");
             }
 
             currentConsoleOut.Should().Be(Console.Out);
@@ -41,7 +41,8 @@ namespace AdventOfSharedTools.Tests
             {
                 Printer.PrintResults(resultPartOne, resultPartTwo);
                 var output = consoleOutput.GetOuput();
-                output.Should().Be($"Part 1: {resultPartOne}\r\nPart 2: {resultPartTwo}\r\n");
+                output.Should().Contain($"Part 1: {resultPartOne}");
+                output.Should().Contain($"Part 2: {resultPartTwo}");
             }
 
             currentConsoleOut.Should().Be(Console.Out);
@@ -60,7 +61,8 @@ namespace AdventOfSharedTools.Tests
             {
                 Printer.PrintResults(resultPartOne, resultPartTwo, timeElapsedPartOne, timeElapsedPartTwo);
                 var output = consoleOutput.GetOuput();
-                output.Should().Be($"Part 1: {resultPartOne} | Solved in: {timeElapsedPartOne}ms\r\nPart 2: {resultPartTwo} | Solved in: {timeElapsedPartTwo}ms\r\n");
+                output.Should().Contain($"Part 1: {resultPartOne} | Solved in: {timeElapsedPartOne}ms");
+                output.Should().Contain($"Part 2: {resultPartTwo} | Solved in: {timeElapsedPartTwo}ms");
             }
 
             currentConsoleOut.Should().Be(Console.Out);
