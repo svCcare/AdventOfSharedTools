@@ -1,5 +1,4 @@
 ﻿using AdventOfSharedTools.Models;
-using System.Text;
 
 namespace AdventOfSharedTools
 {
@@ -17,12 +16,18 @@ namespace AdventOfSharedTools
             };
         }
 
-        public static int MergeNumbers(params int[] numbers)
+        public static int JoinNumber(this int number, int anotherNumber)
         {
-            StringBuilder builder = new();
-            builder.Append(numbers.Select(i => i.ToString()));
+            var mergedAsString = number.ToString() + anotherNumber.ToString();
 
-            return int.Parse(builder.ToString());
+            if (int.TryParse(mergedAsString, out int result))
+            {
+                return result;
+            }
+            else
+            {
+                throw new ArgumentException($"Provided parameter number was in incorrect format");
+            }
         }
     }
 }
