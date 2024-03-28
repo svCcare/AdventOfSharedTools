@@ -11,7 +11,7 @@ namespace AdventOfSharedTools.Tests
         [InlineData(0, 0, 0)]
         [InlineData(1, 0, 10)]
         [InlineData(0, 1, 1)]
-        public void MergeNumbers_ForSimpleInput_WorksAsIntended(int numberA, int numberB, int expected)
+        public void JoinNumber_ForSimpleInput_WorksAsIntended(int numberA, int numberB, int expected)
         {
             var result = numberA.JoinNumber(numberB);
 
@@ -19,7 +19,7 @@ namespace AdventOfSharedTools.Tests
         }
 
         [Fact]
-        public void MergeNumbers_WhenParameterIsNegativeNumber_ShouldThrowArgumentException()
+        public void JoinNumber_WhenParameterIsNegativeNumber_ShouldThrowArgumentException()
         {
             var numberA = 1;
             var numberB = -2;
@@ -30,7 +30,7 @@ namespace AdventOfSharedTools.Tests
         }
 
         [Fact]
-        public void MergeNumbers_WhenJoinedNumbersAreTooBigForInt_ShouldThrowArgumentException()
+        public void JoinNumber_WhenJoinedNumbersAreTooBigForInt_ShouldThrowArgumentException()
         {
             var numberA = int.MaxValue;
             var numberB = int.MaxValue;
