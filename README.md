@@ -3,7 +3,7 @@
 ![NuGet](https://img.shields.io/nuget/v/AdventOfSharedTools)
 ![NuGet](https://img.shields.io/nuget/dt/AdventOfSharedTools)
 ![Workflow](https://github.com/svCcare/AdventOfSharedTools/actions/workflows/build.yml/badge.svg)
-![Code Coverage](https://img.shields.io/badge/Code%20Coverage-81%25-success?style=flat)
+![Code Coverage](https://img.shields.io/badge/Code%20Coverage-90%25-success?style=flat)
 
 release version badge
 
