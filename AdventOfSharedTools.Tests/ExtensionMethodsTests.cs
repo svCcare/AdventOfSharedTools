@@ -1,10 +1,23 @@
-﻿using FluentAssertions;
+﻿using AdventOfSharedTools.Models;
+using FluentAssertions;
 using Xunit;
 
 namespace AdventOfSharedTools.Tests
 {
     public class ExtensionMethodsTests
     {
+        [Theory]
+        [InlineData(CardShape.Heart, '♥')]
+        [InlineData(CardShape.Diamond, '♦')]
+        [InlineData(CardShape.Club, '♣')]
+        [InlineData(CardShape.Spade, '♠')]
+        public void CardShapeAsIcon_ForValidInput_ShouldReturnCorrectShape(CardShape cardShape, char expectedOutput)
+        {
+            var result = cardShape.CardShapeAsIcon();
+
+            result.Should().Be(expectedOutput);
+        }
+
         [Theory]
         [InlineData(1, 2, 12)]
         [InlineData(10, 22, 1022)]
