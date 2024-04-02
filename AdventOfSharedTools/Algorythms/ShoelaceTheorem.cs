@@ -8,66 +8,66 @@ namespace AdventOfSharedTools.Algorythms
     /// </summary>
     public static class ShoelaceTheorem
     {
-        public static long Calculate(IList<Location> locations)
+        public static long Calculate(IList<Location> points)
         {
             long sumX = 0;
             long sumY = 0;
 
-            for (int i = 0; i < locations.Count - 1; i++)
+            for (int i = 0; i < points.Count - 1; i++)
             {
-                var currentPoint = locations[i];
-                var nextPoint = locations[i + 1];
+                var currentPoint = points[i];
+                var nextPoint = points[i + 1];
 
                 sumX += currentPoint.X * nextPoint.Y;
                 sumY += currentPoint.Y * nextPoint.X;
             }
 
-            sumX += locations.Last().X * locations[0].Y;
-            sumY += locations.Last().Y * locations[0].X;
+            sumX += points.Last().X * points[0].Y;
+            sumY += points.Last().Y * points[0].X;
 
             var result = Math.Abs(sumX - sumY) / 2;
 
             return result;
         }
 
-        public static long Calculate(IList<Point> locations)
+        public static long Calculate(IList<Point> points)
         {
             long sumX = 0;
             long sumY = 0;
 
-            for (int i = 0; i < locations.Count - 1; i++)
+            for (int i = 0; i < points.Count - 1; i++)
             {
-                var currentPoint = locations[i];
-                var nextPoint = locations[i + 1];
+                var currentPoint = points[i];
+                var nextPoint = points[i + 1];
 
                 sumX += currentPoint.X * nextPoint.Y;
                 sumY += currentPoint.Y * nextPoint.X;
             }
 
-            sumX += locations.Last().X * locations[0].Y;
-            sumY += locations.Last().Y * locations[0].X;
+            sumX += points.Last().X * points[0].Y;
+            sumY += points.Last().Y * points[0].X;
 
             var result = Math.Abs(sumX - sumY) / 2;
 
             return result;
         }
 
-        public static long Calculate(IList<(int X, int Y)> locations)
+        public static long Calculate(IList<(int X, int Y)> points)
         {
             long sumX = 0;
             long sumY = 0;
 
-            for (int i = 0; i < locations.Count - 1; i++)
+            for (int i = 0; i < points.Count - 1; i++)
             {
-                var currentPoint = locations[i];
-                var nextPoint = locations[i + 1];
+                var currentPoint = points[i];
+                var nextPoint = points[i + 1];
 
                 sumX += currentPoint.X * nextPoint.Y;
                 sumY += currentPoint.Y * nextPoint.X;
             }
 
-            sumX += locations.Last().X * locations[0].Y;
-            sumY += locations.Last().Y * locations[0].X;
+            sumX += points.Last().X * points[0].Y;
+            sumY += points.Last().Y * points[0].X;
 
             var result = Math.Abs(sumX - sumY) / 2;
 
