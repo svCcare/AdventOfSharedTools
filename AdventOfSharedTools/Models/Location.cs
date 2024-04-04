@@ -13,7 +13,7 @@
         /// <param name="value">Cannot be negative. Throws ArgumentException in such case.</param>
         /// <param name="direction"></param>
         /// <exception cref="ArgumentException"></exception>
-        public void Move(int value, Direction direction)
+        public Location Move(int value, Direction direction)
         {
             if (value < 0)
                 throw new ArgumentException($"Parameter {nameof(value)} cannot be negative.");
@@ -35,6 +35,8 @@
                 default:
                     break;
             }
+
+            return this;
         }
 
         /// <summary>
