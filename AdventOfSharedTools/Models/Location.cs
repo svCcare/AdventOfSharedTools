@@ -49,5 +49,21 @@
             this.X = X;
             this.Y = Y;
         }
+
+        public IEnumerable<Location> GetAllAdjacentLocations()
+        {
+            List<Location> result = new List<Location>();
+
+            result.Add(new Location(this.X - 1, this.Y - 1));
+            result.Add(new Location(this.X, this.Y - 1));
+            result.Add(new Location(this.X + 1, this.Y - 1));
+            result.Add(new Location(this.X - 1, this.Y));
+            result.Add(new Location(this.X + 1, this.Y));
+            result.Add(new Location(this.X - 1, this.Y + 1));
+            result.Add(new Location(this.X - 1, this.Y + 1));
+            result.Add(new Location(this.X - 1, this.Y + 1));
+
+            return result;
+        }
     }
 }
