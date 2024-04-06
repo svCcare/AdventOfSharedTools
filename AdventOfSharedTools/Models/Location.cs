@@ -50,6 +50,10 @@
             this.Y = Y;
         }
 
+        /// <summary>
+        /// Returns collection of all possible locations that are Ajacent to given location
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Location> GetAllAdjacentLocations()
         {
             List<Location> result = new List<Location>();
