@@ -4,7 +4,7 @@
 ![NuGet](https://img.shields.io/nuget/dt/AdventOfSharedTools)
 ![Workflow](https://github.com/svCcare/AdventOfSharedTools/actions/workflows/build.yml/badge.svg)
 ![Code Coverage](https://img.shields.io/badge/Code%20Coverage-90%25-success?style=flat)
-
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FsvCcare%2FAdventOfSharedTools%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/svCcare/AdventOfSharedTools/main)
 release version badge
 
 license badge
